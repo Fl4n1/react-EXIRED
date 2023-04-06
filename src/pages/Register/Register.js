@@ -62,7 +62,7 @@ const Register = () => {
                         value === password.current || "The password do not match"
                 })}/>
                 {errors?.confirmPwd && <p>{errors?.confirmPwd?.message}</p>}
-                <button className='register__btn'>Зарегестрироваться</button>
+                <button className='register__btn'>Зарегистрироваться</button>
                 <p className='register__quest'>Уже есть аккаунт? <Link className='register__link' to='/login'>Войти</Link> </p>
                 <Link to='/' className='home'>Вернуться на главную страницу</Link>
 
