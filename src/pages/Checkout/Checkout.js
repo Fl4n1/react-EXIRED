@@ -18,7 +18,7 @@ const Checkout = () => {
     const {cart, ticket, user, setUser, setCart, setTicket} = useContext(CustomContext);
     const addOrder = async (data) => {
         console.log(data);
-        await axios.post('//shop-server-alpha.vercel.app/orders', {
+        await axios.post('//45.8.96.244:8080/orders', {
             ...data,
             clothes: cart,
             price: Array.isArray(ticket) && ticket.length
@@ -29,7 +29,7 @@ const Checkout = () => {
         }).then(() =>  {
             console.log('Успешно добавлен')
         });
-        await axios.patch(`//shop-server-alpha.vercel.app/users/${user.id}`, {
+        await axios.patch(`//45.8.96.244:8080/users/${user.id}`, {
             orders: [
                 ...user.orders,
                 {
@@ -44,12 +44,12 @@ const Checkout = () => {
             ]
         }).then(() => console.log('Успешно добавлен'));
 
-        await axios(`//shop-server-alpha.vercel.app/users/${user.id}`).then((res) => setUser(res.data));
+        await axios(`//45.8.96.244:8080/users/${user.id}`).then((res) => setUser(res.data));
 
         await Array.isArray(ticket) && ticket.length && ticket[0].count > 1 ?
-            axios.patch(`//shop-server-alpha.vercel.app/tickets/${ticket[0].id}`, {count: ticket[0].count - 1})
+            axios.patch(`//45.8.96.244:8080/tickets/${ticket[0].id}`, {count: ticket[0].count - 1})
                 .then(() => console.log('успешно использован'))
-            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//shop-server-alpha.vercel.app/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален'))
+            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//45.8.96.244:8080/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален'))
             : console.log('Error');
 
         await reset();
