@@ -43,11 +43,11 @@ const Register = () => {
                 })} className='register__input' type="text" placeholder='Введите логин'/>
                 <span>{errors?.login?.message}</span>
                 <label className='register__label' htmlFor="tel">Телефон</label>
-                <InputMask mask={`+\\9\\96(999)99-99-99`} type='tel'  id='tel' {...register('phone', {
+                <InputMask mask={`+\\7\\(999)999-99-99`} type='tel'  id='tel' {...register('phone', {
                     required: 'Это поле обязательное *'
                 })} className="register__input" placeholder='Ввеите номер телефона'/>
                 <span>{errors?.phone?.message}</span>
-                <label className='register__label' htmlFor="4">Пароль</label>
+                <label className='register__label' htmlFor="4">Пароль.</label>
                 <input id='4' {...register('password', {
                     required: "You must specify a password",
                     minLength: {
