@@ -58,14 +58,14 @@ export const Context = (props) => {
     const [shop, setShop] = useState([]);
 
     const getAllClothes = () => {
-        axios('http://localhost:8080/clothes')
+        axios('//shop-server-alpha.vercel.app/clothes')
             .then(({data}) => setShop(data) )
     };
 
     const navigate = useNavigate();
 
     const registerUser = (data) => {
-        axios.post('http://localhost:8080/register', {...data, orders: []})
+        axios.post('//shop-server-alpha.vercel.app/register', {...data, orders: []})
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user));
                 setUser(res.data.user);
@@ -74,7 +74,7 @@ export const Context = (props) => {
     };
 
     const loginUser = (data) => {
-        axios.post('http://localhost:8080/login', data)
+        axios.post('//shop-server-alpha.vercel.app/login', data)
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user));
                 setUser(res.data.user);

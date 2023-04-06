@@ -17,7 +17,7 @@ const Product = () => {
     const {setPage, setStatus, shop, product, setProduct, addCart, user, getAllClothes, color, setColor} = useContext(CustomContext);
     const {t} = useTranslation();
     useEffect(() => {
-        axios(`http://localhost:8080/clothes/${params.id}`)
+        axios(`//shop-server-alpha.vercel.app/clothes/${params.id}`)
             .then(({data}) => {
                 setProduct(data);
                 setColor(data.colors[0]);
@@ -52,7 +52,7 @@ const Product = () => {
                                         {sale ? <input className='product__content-inputSale' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number"/> : ''}
                                         {user.email === 'admin@mail.ru' ? <button className='product__content-btnSale' type='button' onClick={() => {
                                             if (sale) {
-                                                axios.patch(`http://localhost:8080/clothes/${product.id}`, {priceSale: product.price - product.price / 100 * saleCount})
+                                                axios.patch(`//shop-server-alpha.vercel.app/clothes/${product.id}`, {priceSale: product.price - product.price / 100 * saleCount})
                                                     .then(() => {
                                                         getAllClothes();
                                                         setSaleCount(0)

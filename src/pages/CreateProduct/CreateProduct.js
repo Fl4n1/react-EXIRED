@@ -17,7 +17,7 @@ const CreateProduct = () => {
 
 
     const createProduct = (data) => {
-        axios.post('http://localhost:8080/clothes', {
+        axios.post('//shop-server-alpha.vercel.app/clothes', {
             ...data,
             colors,
             size: sizes,

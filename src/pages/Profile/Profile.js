@@ -33,7 +33,7 @@ const Profile = () => {
 
     const changeUser = (data) => {
 
-        axios.patch(`http://localhost:8080/users/${user.id}`, data)
+        axios.patch(`//shop-server-alpha.vercel.app/users/${user.id}`, data)
             .then(({data}) => {
                 setUser(data);
                 localStorage.setItem('user', JSON.stringify(data));
@@ -43,7 +43,7 @@ const Profile = () => {
 
 
     const changePassword = (data) => {
-        axios.patch(`http://localhost:8080/users/${user.id}`, {password: data.password})
+        axios.patch(`//shop-server-alpha.vercel.app/users/${user.id}`, {password: data.password})
             .then(() => setPasswordChange(false))
     };
 

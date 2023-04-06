@@ -14,7 +14,7 @@ const Basket = () => {
 
     const useTicket = (e) => {
         e.preventDefault();
-        axios(`http://localhost:8080/tickets?title=${e.target[0].value}`)
+        axios(`//shop-server-alpha.vercel.app/tickets?title=${e.target[0].value}`)
             .then(({data}) => {
                 if (data.length) {
                     setTicket(data)
