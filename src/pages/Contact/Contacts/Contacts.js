@@ -10,7 +10,7 @@ const Contacts = () => {
                 <div className="contacts__content">
                     <div className="contacts__info">
                         <h4 className="contacts__info-title" dangerouslySetInnerHTML={{__html: t("contacts.info.tel")}}/>
-                        <a href="#" className="contacts__info-link">+7 (495) 823-54-12</a>
+                        <a href="#" className="contacts__info-link">+7 (950) 793-93-89</a>
                     </div>
                     <div className="contacts__info">
                         <h4 className="contacts__info-title" dangerouslySetInnerHTML={{__html: t("contacts.info.eMail")}}/>
