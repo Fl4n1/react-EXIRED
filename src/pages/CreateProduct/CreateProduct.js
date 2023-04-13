@@ -17,7 +17,7 @@ const CreateProduct = () => {
 
 
     const createProduct = (data) => {
-        axios.post('//45.8.96.244:8080/clothes', {
+        axios.post('//genshin-easy.ru:8000/clothes', {
             ...data,
             colors,
             size: sizes,

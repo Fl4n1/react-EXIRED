@@ -1,6 +1,6 @@
 {
   "name": "exired",
-  "proxy": "http://45.8.96.244:8080",
+  "proxy": "https://genshin-easy.ru:8000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

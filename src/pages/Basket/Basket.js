@@ -14,7 +14,7 @@ const Basket = () => {
 
     const useTicket = (e) => {
         e.preventDefault();
-        axios(`//45.8.96.244:8080/tickets?title=${e.target[0].value}`)
+        axios(`//genshin-easy.ru:8000/tickets?title=${e.target[0].value}`)
             .then(({data}) => {
                 if (data.length) {
                     setTicket(data)
