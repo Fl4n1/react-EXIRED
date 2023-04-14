@@ -27,7 +27,7 @@ const Checkout = () => {
             userEmail: user.email,
             date: new Date()
         }).then(() =>  {
-            console.log('Успешно добавлен')
+            console.log('Успешно добавлен 1')
         });
         await axios.patch(`//genshin-easy.ru:8000/users/${user.id}`, {
             orders: [
@@ -42,14 +42,14 @@ const Checkout = () => {
                     date: new Date()
                 }
             ]
-        }).then(() => console.log('Успешно добавлен'));
+        }).then(() => console.log('Успешно добавлен 2'));
 
         await axios(`//genshin-easy.ru:8000/users/${user.id}`).then((res) => setUser(res.data));
 
         await Array.isArray(ticket) && ticket.length && ticket[0].count > 1 ?
             axios.patch(`//genshin-easy.ru:8000/tickets/${ticket[0].id}`, {count: ticket[0].count - 1})
                 .then(() => console.log('успешно использован'))
-            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//genshin-easy.ru:8000/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален'))
+            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//genshin-easy.ru:8000/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален 3'))
             : console.log('Error');
 
         await reset();

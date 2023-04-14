@@ -14,7 +14,7 @@ import EditOrders from "./orders/EditOrders";
 const AdminPanel = () => {
     return (
         <section className='adminPanel'>
-            <Admin dataProvider={restProvider('http://localhost:3000')}>
+            <Admin dataProvider={restProvider('https://www.exiredshop.ru/')}>
                 <Resource create={CreateClothes} edit={EditClothes} name="clothes" list={PostListClothes}/>
                 <Resource create={CreateUsers} edit={EditUsers} name="users" list={PostListUsers}/>
                 <Resource edit={EditOrders}  name="orders" list={PostListOrders}/>
