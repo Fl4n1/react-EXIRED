@@ -108,7 +108,7 @@ const Profile = () => {
                                                             <p className='profile__orders-info'>цвет : <br/> <span className='profile__orders-span'>{el.color}</span></p>
                                                             <p className='profile__orders-info'>Размер : <br/> <span className='profile__orders-span'>{el.size}</span> </p>
                                                             <p className='profile__orders-info'>Кол-во :  <br/> <span className='profile__orders-span'>{el.count}</span></p>
-                                                            <p className='profile__orders-info'>Цена : <br/> <span className='profile__orders-span'>{el.price}$</span> </p>
+                                                            <p className='profile__orders-info'>Цена : <br/> <span className='profile__orders-span'>{el.price}₽</span> </p>
                                                         </li>
                                                     ))
                                                 }
