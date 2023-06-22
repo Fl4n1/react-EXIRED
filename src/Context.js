@@ -58,14 +58,14 @@ export const Context = (props) => {
     const [shop, setShop] = useState([]);
 
     const getAllClothes = () => {
-        axios('//genshin-easy.ru:8000/clothes')
+        axios('//cyber-ocean.ru:8443/clothes')
             .then(({data}) => setShop(data) )
     };
 
     const navigate = useNavigate();
 
     const registerUser = (data) => {
-        axios.post('//genshin-easy.ru:8000/register', {...data, orders: []})
+        axios.post('//cyber-ocean.ru:8443/register', {...data, orders: []})
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user));
                 setUser(res.data.user);
@@ -74,7 +74,7 @@ export const Context = (props) => {
     };
 
     const loginUser = (data) => {
-        axios.post('//genshin-easy.ru:8000/login',  data )
+        axios.post('//cyber-ocean.ru:8443/login',  data )
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user));
                 setUser(res.data.user);
@@ -103,7 +103,7 @@ export const Context = (props) => {
     }, [user.orders]);
 
     const logOutUser = () => {
-        if (window.confirm('ты точно хочешь выйти?')) {
+        if (window.confirm('Вы хотите выйти ?')) {
             localStorage.removeItem('user');
             localStorage.removeItem('cart');
             setUser({
