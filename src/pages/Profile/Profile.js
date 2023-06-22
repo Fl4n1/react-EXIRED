@@ -33,7 +33,7 @@ const Profile = () => {
 
     const changeUser = (data) => {
 
-        axios.patch(`//genshin-easy.ru:8000/users/${user.id}`, data)
+        axios.patch(`//cyber-ocean.ru:8443/users/${user.id}`, data)
             .then(({data}) => {
                 setUser(data);
                 localStorage.setItem('user', JSON.stringify(data));
@@ -43,7 +43,7 @@ const Profile = () => {
 
 
     const changePassword = (data) => {
-        axios.patch(`//genshin-easy.ru:8000/users/${user.id}`, {password: data.password})
+        axios.patch(`//cyber-ocean.ru:8443/users/${user.id}`, {password: data.password})
             .then(() => setPasswordChange(false))
     };
 
