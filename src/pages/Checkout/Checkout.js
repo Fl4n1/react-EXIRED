@@ -18,7 +18,7 @@ const Checkout = () => {
     const {cart, ticket, user, setUser, setCart, setTicket} = useContext(CustomContext);
     const addOrder = async (data) => {
         console.log(data);
-        await axios.post('//genshin-easy.ru:8000/orders', {
+        await axios.post('//cyber-ocean.ru:8443/orders', {
             ...data,
             clothes: cart,
             price: Array.isArray(ticket) && ticket.length
@@ -29,7 +29,7 @@ const Checkout = () => {
         }).then(() =>  {
             console.log('Успешно добавлен 1')
         });
-        await axios.patch(`//genshin-easy.ru:8000/users/${user.id}`, {
+        await axios.patch(`//cyber-ocean.ru:8443/users/${user.id}`, {
             orders: [
                 ...user.orders,
                 {
@@ -44,12 +44,12 @@ const Checkout = () => {
             ]
         }).then(() => console.log('Успешно добавлен 2'));
 
-        await axios(`//genshin-easy.ru:8000/users/${user.id}`).then((res) => setUser(res.data));
+        await axios(`//cyber-ocean.ru:8443/users/${user.id}`).then((res) => setUser(res.data));
 
         await Array.isArray(ticket) && ticket.length && ticket[0].count > 1 ?
-            axios.patch(`//genshin-easy.ru:8000/tickets/${ticket[0].id}`, {count: ticket[0].count - 1})
+            axios.patch(`//cyber-ocean.ru:8443/tickets/${ticket[0].id}`, {count: ticket[0].count - 1})
                 .then(() => console.log('успешно использован'))
-            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//genshin-easy.ru:8000/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален 3'))
+            : Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`//cyber-ocean.ru:8443/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален 3'))
             : console.log('Error');
 
         await reset();
